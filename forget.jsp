@@ -6,7 +6,7 @@ un=request.getParameter("n1");
 npas=request.getParameter("n2");
 cpas=request.getParameter("n3");
 
-
+String message="passward updated succesfully";
 if(npas.equals(cpas))
 {
     Connection conn;
@@ -19,10 +19,15 @@ try{
             int r=stmt.executeUpdate("update login set passward='"+npas+"' where username ='"+un+"';");
             conn.close();
 %>
-<script>
-    alert("passward updated succesfully");
-    </script>
-    <jsp:forward page="login.html"/>
+
+
+    <script>
+  setTimeout(function() {
+    alert("<%= message %>");
+    window.location.href = "login.html"; // Replace with your desired forward page
+  }, 2000); // Replace 2000 with the desired time delay in milliseconds
+</script>
+
 <%
 
 

@@ -6,6 +6,7 @@ s2=request.getParameter("d2");
 s1=request.getParameter("d1");
 s3=request.getParameter("d3");
 s4=request.getParameter("d4");
+String message="feedback added succesfully";
 
 
 try{
@@ -17,11 +18,14 @@ try{
              int k=stm.executeUpdate("insert into feedback values('"+s1+"','"+s2+"','"+s3+"','"+s4+"')");
             con.close();
    %>
-  <script>
-    alert("feedback added succesfully")
-  </script>
 
-  <jsp:forward page="user.jsp" />
+   <script>
+  setTimeout(function() {
+    alert("<%= message %>");
+    window.location.href = "user.jsp"; // Replace with your desired forward page
+  }, 2000); // Replace 2000 with the desired time delay in milliseconds
+</script>
+
     <%
      
 }

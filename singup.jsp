@@ -11,6 +11,7 @@ type=request.getParameter("type");
 if(npass.equals(cpass)){
 Connection conn;
 Statement stmt;
+String message="sign up succesfull";
 try{
      Class.forName("com.mysql.cj.jdbc.Driver");
        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/rural","root","");
@@ -19,10 +20,13 @@ try{
             int r=stmt.executeUpdate("insert into login values('"+uname+"','"+cpass+"','"+type+"')");
             conn.close();
  %>
-<script>
-    alert(" sign up succesfully");
-    </script>
-    <jsp:forward page="login.html"/>
+
+    <script>
+  setTimeout(function() {
+    alert("<%= message %>");
+    window.location.href = "login.html"; // Replace with your desired forward page
+  }, 2000); // Replace 2000 with the desired time delay in milliseconds
+</script>
 <%
 
 }

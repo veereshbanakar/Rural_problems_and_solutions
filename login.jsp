@@ -7,6 +7,7 @@ s2=request.getParameter("l2");
 
   Connection conn;
     Statement stmt;
+    String message="eneter the valid user name and passward";
 
 try{
   
@@ -44,10 +45,16 @@ alert("type should be case and spelling sencitive")
 
 catch(Exception e){
 %>
-<script>
-     alert("eneter the valid user name and passward");
-     </script>
-      <jsp:forward page="login.html" />
+
+
+
+
+  <script>
+  setTimeout(function() {
+    alert("<%= message %>");
+    window.location.href = "login.html"; // Replace with your desired forward page
+  }, 2000); // Replace 2000 with the desired time delay in milliseconds
+</script>
      
      <%
 }

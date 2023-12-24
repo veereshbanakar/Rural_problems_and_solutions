@@ -1,6 +1,6 @@
 body{
 
-    background-image: url("https://www.ritewater.in/wp-content/uploads/2021/04/2021-04-15.jpg");
+    background-image: url(istockphoto-810186294-612x612.jpg);
    background-repeat: no-repeat;
    background-size: cover;
 }
@@ -50,6 +50,7 @@ nav li a:hover{
     
       color:white;
       font-size: 20px;
+      background-color: rgba(0, 0, 0, 0.2);
       
       
 
